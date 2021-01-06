@@ -4,7 +4,7 @@
 
 ## Tasks
 
--  Work with modals;
+-  Work with main-slider;
 
 ## Let's started
 
