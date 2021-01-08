@@ -4,11 +4,16 @@
 
 ## Tasks
 
--  Work with main-slider;
+- Work with main-slider, video-player;
+
+## Use
+
+- YouTube Player API Reference;
 
 ## Let's started
 
 1. **To run the project write in the command line:**
+
    ```shell
    $ npm i
    $ gulp
