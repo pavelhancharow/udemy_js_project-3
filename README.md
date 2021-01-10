@@ -4,7 +4,7 @@
 
 ## Tasks
 
-- Work with main-slider, video-player;
+- Work with main-slider, video-player, mini-sliders, hidden lists;
 
 ## Use
 
