@@ -5,6 +5,8 @@
 ## Tasks
 
 - Work with main-slider, video-player, mini-sliders, hidden lists;
+- Validation with input mask;
+- HTTP-requests: POST;
 
 ## Use
 
