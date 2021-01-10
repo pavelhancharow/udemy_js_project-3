@@ -7,7 +7,6 @@ export default class Form {
       error: 'Что-то пошло не так...'
     };
     this.path = 'assets/question.php';
-    console.log(this.message.loading);
   }
 
   async postData(url, data) {
