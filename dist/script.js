@@ -5088,8 +5088,12 @@ function () {
 
     this.oldOfficer = document.querySelector(oldOfficer);
     this.newOfficer = document.querySelector(newOfficer);
-    this.oldItems = this.oldOfficer.querySelectorAll(items);
-    this.newItems = this.newOfficer.querySelectorAll(items);
+
+    try {
+      this.oldItems = this.oldOfficer.querySelectorAll(items);
+      this.newItems = this.newOfficer.querySelectorAll(items);
+    } catch (error) {}
+
     this.oldCounter = 0;
     this.newCounter = 0;
   }
@@ -5119,10 +5123,12 @@ function () {
   }, {
     key: "init",
     value: function init() {
-      this.hideItems(this.oldItems);
-      this.hideItems(this.newItems);
-      this.bindTriggers(this.oldOfficer, this.oldItems, this.oldCounter);
-      this.bindTriggers(this.newOfficer, this.newItems, this.newCounter);
+      try {
+        this.hideItems(this.oldItems);
+        this.hideItems(this.newItems);
+        this.bindTriggers(this.oldOfficer, this.oldItems, this.oldCounter);
+        this.bindTriggers(this.newOfficer, this.newItems, this.newCounter);
+      } catch (error) {}
     }
   }]);
 
@@ -5184,7 +5190,6 @@ function () {
       error: 'Что-то пошло не так...'
     };
     this.path = 'assets/question.php';
-    console.log(this.message.loading);
   }
 
   _createClass(Form, [{
@@ -5518,24 +5523,26 @@ function (_Slider) {
       var _this2 = this;
 
       try {
-        this.hanson = document.querySelector('.hanson');
-      } catch (error) {}
+        try {
+          this.hanson = document.querySelector('.hanson');
+        } catch (error) {}
 
-      this.btns.forEach(function (btn) {
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
+        this.btns.forEach(function (btn) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
 
-          _this2.plusSlides(1);
-        });
-        btn.parentNode.previousElementSibling.addEventListener('click', function (e) {
-          e.preventDefault();
-          _this2.slideIndex = 1;
+            _this2.plusSlides(1);
+          });
+          btn.parentNode.previousElementSibling.addEventListener('click', function (e) {
+            e.preventDefault();
+            _this2.slideIndex = 1;
+
+            _this2.showSlides(_this2.slideIndex);
+          });
 
           _this2.showSlides(_this2.slideIndex);
         });
-
-        _this2.showSlides(_this2.slideIndex);
-      });
+      } catch (error) {}
     }
   }]);
 
@@ -5710,16 +5717,18 @@ function (_Slider) {
   }, {
     key: "init",
     value: function init() {
-      this.container.style.cssText = "\n      display: flex;\n      flex-wrap: wrap;\n      overflow: hidden;\n      align-items: flex-start;\n    ";
-      this.bindTriggers();
-      this.decorateSlides();
+      try {
+        this.container.style.cssText = "\n      display: flex;\n      flex-wrap: wrap;\n      overflow: hidden;\n      align-items: flex-start;\n    ";
+        this.bindTriggers();
+        this.decorateSlides();
 
-      if (this.autoplay) {
-        this.autoPlay();
-        this.startAutoplay(this.slides);
-        this.startAutoplay(this.next);
-        this.startAutoplay(this.prev);
-      }
+        if (this.autoplay) {
+          this.autoPlay();
+          this.startAutoplay(this.slides);
+          this.startAutoplay(this.next);
+          this.startAutoplay(this.prev);
+        }
+      } catch (error) {}
     }
   }]);
 
@@ -5760,7 +5769,11 @@ var Slider = function Slider() {
   _classCallCheck(this, Slider);
 
   this.container = document.querySelector(container);
-  this.slides = this.container.children;
+
+  try {
+    this.slides = this.container.children;
+  } catch (error) {}
+
   this.btns = document.querySelectorAll(btns);
   this.prev = document.querySelector(prev);
   this.next = document.querySelector(next);
