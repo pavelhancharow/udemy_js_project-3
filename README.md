@@ -4,7 +4,7 @@
 
 ## Tasks
 
-- Work with main-slider, video-player, mini-sliders, hidden lists;
+- Work with main-slider, dynamic video player, mini-sliders, hidden lists;
 - Validation with input mask;
 - HTTP-requests: POST;
 
@@ -24,3 +24,4 @@
 2. **Open the source code and start editing!**
 
    Your site is now running at `http://localhost:4000`
+   Second page is now running at `http://localhost:4000/modules.html`
